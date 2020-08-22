@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="56b01aaa-821e-4d9e-8513-d875c8c32808" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1gEa5zj5oSgRYAeE4qOu8L8KmMd" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../KRA_SPY_W_14_PYT_ScrumLab" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/donation" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="CharityDonation" type="Python.DjangoServer" factoryName="Django server">
+      <module name="CharityDonation" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="CharityDonation.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="56b01aaa-821e-4d9e-8513-d875c8c32808" name="Default Changelist" comment="" />
+      <created>1597682025292</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1597682025292</updated>
+      <workItem from="1597682052326" duration="1734000" />
+      <workItem from="1597954790366" duration="698000" />
+      <workItem from="1598097321911" duration="9684000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="167" y="174" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597683099032">
+      <screen x="67" y="27" width="1853" height="948" />
+    </state>
+    <state x="167" y="174" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.948@67.27.1853.948" timestamp="1597683099032" />
+    <state x="776" y="258" width="424" height="484" key="FileChooserDialogImpl" timestamp="1598097351166">
+      <screen x="67" y="27" width="1853" height="948" />
+    </state>
+    <state x="776" y="258" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.948@67.27.1853.948" timestamp="1598097351166" />
+    <state width="1807" height="244" key="GridCell.Tab.0.bottom" timestamp="1598109636886">
+      <screen x="67" y="27" width="1853" height="948" />
+    </state>
+    <state width="1807" height="244" key="GridCell.Tab.0.bottom/67.27.1853.948@67.27.1853.948" timestamp="1598109636886" />
+    <state width="1807" height="244" key="GridCell.Tab.0.center" timestamp="1598109636884">
+      <screen x="67" y="27" width="1853" height="948" />
+    </state>
+    <state width="1807" height="244" key="GridCell.Tab.0.center/67.27.1853.948@67.27.1853.948" timestamp="1598109636884" />
+    <state width="1807" height="244" key="GridCell.Tab.0.left" timestamp="1598109636884">
+      <screen x="67" y="27" width="1853" height="948" />
+    </state>
+    <state width="1807" height="244" key="GridCell.Tab.0.left/67.27.1853.948@67.27.1853.948" timestamp="1598109636884" />
+    <state width="1807" height="244" key="GridCell.Tab.0.right" timestamp="1598109636885">
+      <screen x="67" y="27" width="1853" height="948" />
+    </state>
+    <state width="1807" height="244" key="GridCell.Tab.0.right/67.27.1853.948@67.27.1853.948" timestamp="1598109636885" />
+    <state x="482" y="135" key="SettingsEditor" timestamp="1597682162764">
+      <screen x="67" y="27" width="1853" height="948" />
+    </state>
+    <state x="482" y="135" key="SettingsEditor/67.27.1853.948@67.27.1853.948" timestamp="1597682162764" />
+    <state x="1092" y="328" key="com.intellij.ide.util.TipDialog" timestamp="1598097327082">
+      <screen x="67" y="27" width="1853" height="948" />
+    </state>
+    <state x="1092" y="328" key="com.intellij.ide.util.TipDialog/67.27.1853.948@67.27.1853.948" timestamp="1598097327082" />
+  </component>
+</project>
