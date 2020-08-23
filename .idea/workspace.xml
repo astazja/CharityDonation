@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56b01aaa-821e-4d9e-8513-d875c8c32808" name="Default Changelist" comment="" />
+    <list default="true" id="56b01aaa-821e-4d9e-8513-d875c8c32808" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donation/migrations/0002_populate.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/donation/migrations/0003_populate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd6b0422-1f0d-4ea2-9425-221ac8623862.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dd6b0422-1f0d-4ea2-9425-221ac8623862.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd6b0422-1f0d-4ea2-9425-221ac8623862/storage_v2/_src_/database/charitydonation.Kq0taw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/dd6b0422-1f0d-4ea2-9425-221ac8623862/storage_v2/_src_/database/charitydonation.Kq0taw/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/donation/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/donation/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/donation/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/donation/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/form-confirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form-confirmation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,17 +35,69 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="charitydonation@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="charitydonation@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="charitydonation@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="charitydonation: database" type="162271b6:PgImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="charitydonation@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="charitydonation: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="charitydonation@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="charitydonation: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="charitydonation@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="charitydonation: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="charitydonation@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="charitydonation: database" type="162271b6:PgImplModel$Database" />
+        <item name="access methods" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1gEa5zj5oSgRYAeE4qOu8L8KmMd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -38,8 +107,9 @@
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../KRA_SPY_W_14_PYT_ScrumLab" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -86,6 +156,8 @@
       <workItem from="1597682052326" duration="1734000" />
       <workItem from="1597954790366" duration="698000" />
       <workItem from="1598097321911" duration="9684000" />
+      <workItem from="1598125481774" duration="4627000" />
+      <workItem from="1598172203529" duration="13761000" />
     </task>
     <servers />
   </component>
@@ -93,30 +165,30 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="167" y="174" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597683099032">
+    <state x="167" y="174" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598189627449">
       <screen x="67" y="27" width="1853" height="948" />
     </state>
-    <state x="167" y="174" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.948@67.27.1853.948" timestamp="1597683099032" />
+    <state x="167" y="174" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1853.948@67.27.1853.948" timestamp="1598189627449" />
     <state x="776" y="258" width="424" height="484" key="FileChooserDialogImpl" timestamp="1598097351166">
       <screen x="67" y="27" width="1853" height="948" />
     </state>
     <state x="776" y="258" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.948@67.27.1853.948" timestamp="1598097351166" />
-    <state width="1807" height="244" key="GridCell.Tab.0.bottom" timestamp="1598109636886">
+    <state width="1807" height="243" key="GridCell.Tab.0.bottom" timestamp="1598201640261">
       <screen x="67" y="27" width="1853" height="948" />
     </state>
-    <state width="1807" height="244" key="GridCell.Tab.0.bottom/67.27.1853.948@67.27.1853.948" timestamp="1598109636886" />
-    <state width="1807" height="244" key="GridCell.Tab.0.center" timestamp="1598109636884">
+    <state width="1807" height="243" key="GridCell.Tab.0.bottom/67.27.1853.948@67.27.1853.948" timestamp="1598201640261" />
+    <state width="1807" height="243" key="GridCell.Tab.0.center" timestamp="1598201640260">
       <screen x="67" y="27" width="1853" height="948" />
     </state>
-    <state width="1807" height="244" key="GridCell.Tab.0.center/67.27.1853.948@67.27.1853.948" timestamp="1598109636884" />
-    <state width="1807" height="244" key="GridCell.Tab.0.left" timestamp="1598109636884">
+    <state width="1807" height="243" key="GridCell.Tab.0.center/67.27.1853.948@67.27.1853.948" timestamp="1598201640260" />
+    <state width="1807" height="243" key="GridCell.Tab.0.left" timestamp="1598201640260">
       <screen x="67" y="27" width="1853" height="948" />
     </state>
-    <state width="1807" height="244" key="GridCell.Tab.0.left/67.27.1853.948@67.27.1853.948" timestamp="1598109636884" />
-    <state width="1807" height="244" key="GridCell.Tab.0.right" timestamp="1598109636885">
+    <state width="1807" height="243" key="GridCell.Tab.0.left/67.27.1853.948@67.27.1853.948" timestamp="1598201640260" />
+    <state width="1807" height="243" key="GridCell.Tab.0.right" timestamp="1598201640261">
       <screen x="67" y="27" width="1853" height="948" />
     </state>
-    <state width="1807" height="244" key="GridCell.Tab.0.right/67.27.1853.948@67.27.1853.948" timestamp="1598109636885" />
+    <state width="1807" height="243" key="GridCell.Tab.0.right/67.27.1853.948@67.27.1853.948" timestamp="1598201640261" />
     <state x="482" y="135" key="SettingsEditor" timestamp="1597682162764">
       <screen x="67" y="27" width="1853" height="948" />
     </state>

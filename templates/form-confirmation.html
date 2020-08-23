@@ -34,6 +34,7 @@
 {#          <li><a href="index.html#contact" class="btn btn--without-border">Kontakt</a></li>#}
 {#        </ul>#}
       </nav>
+    {% block header %}
 
       <div class="slogan container container--90">
           <h2>
@@ -41,8 +42,9 @@
             informacje o odbiorze.
           </h2>
       </div>
+    {% endblock header %}
     </header>
-
+{% block content %}
 {#    <footer>#}
 {#      <div class="contact">#}
 {#        <h2>Skontaktuj się z nami</h2>#}
@@ -80,5 +82,6 @@
 {#    </footer>#}
 
     <script src="{% static "js/app.js" %}"></script>
+  {% endblock content %}
   </body>
 </html>
