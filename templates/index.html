@@ -117,7 +117,7 @@
               <div class="subtitle">{{ institution.description }}</div>
             </div>
 
-            <div class="col"><div class="text">{{ institution.categories }} <- POPRAWIĆ -> Przykład - ubrania, jedzenie, sprzęt AGD, meble, zabawki</div></div>
+            <div class="col"><div class="text">{% for cat in institution.categories.all %}{{ cat }}, {% endfor %} </div></div>
           </li>
                 {% endif %}
             {% endfor %}
@@ -140,13 +140,19 @@
 {#            <div class="col"><div class="text">ubrania, jedzenie, ciepłe koce</div></div>#}
 {#          </li>#}
         </ul>
-        <!-- Pagination
+{#         Pagination#}
+{#      POPRAWIĆ#}
         <ul class="help--slides-pagination">
-          <li><a href="#" class="btn btn--small btn--without-border active" data-page="1">1</a></li>
-          <li><a href="#" class="btn btn--small btn--without-border" data-page="2">2</a></li>
+        {% for num in institutions_pag.paginator.page_range %}
+            {% if institutions_pag.number == num %}
+          <li><a href="?page={{ num }}" class="btn btn--small btn--without-border active" data-page="1">{{ num }}</a></li>
+            {% else %}
+          <li><a href="?page={{ num }}" class="btn btn--small btn--without-border" data-page="2">{{num}}</a></li>
+            {% endif %}
+        {% endfor %}
           <li><a href="#" class="btn btn--small btn--without-border" data-page="3">3</a></li>
         </ul>
-        -->
+
       </div>
 
 
@@ -164,7 +170,7 @@
               <div class="subtitle">{{ institution.description }}</div>
             </div>
 
-            <div class="col"><div class="text">{{ institution.categories }} <- POPRAWIĆ </div></div>
+            <div class="col"><div class="text">{% for cat in institution.categories.all %} {{ cat }}, {% endfor %} </div></div>
           </li>
                  {% endif %}
             {% endfor %}
@@ -221,7 +227,7 @@
               <div class="subtitle">{{institution.description}}</div>
             </div>
 
-            <div class="col"><div class="text">{{institution.categories}} <- POPRAWIĆ</div></div>
+            <div class="col"><div class="text">{% for cat in institution.categories.all %} {{cat}}, {% endfor %}</div></div>
           </li>
                 {% endif %}
             {% endfor %}

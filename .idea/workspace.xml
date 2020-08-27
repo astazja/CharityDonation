@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56b01aaa-821e-4d9e-8513-d875c8c32808" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd6b0422-1f0d-4ea2-9425-221ac8623862.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd6b0422-1f0d-4ea2-9425-221ac8623862/storage_v2/_src_/database/charitydonation.Kq0taw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd6b0422-1f0d-4ea2-9425-221ac8623862/storage_v2/_src_/database/charitydonation.Kq0taw/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd6b0422-1f0d-4ea2-9425-221ac8623862/storage_v2/_src_/database/charitydonation.Kq0taw/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/dd6b0422-1f0d-4ea2-9425-221ac8623862/storage_v2/_src_/database/charitydonation.Kq0taw/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/donation/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/donation/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/donation/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/donation/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +63,16 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="charitydonation@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="charitydonation: database" type="162271b6:PgImplModel$Database" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="auth_user: table" type="69fad909:PgImplModel$LocalTable" />
       </path>
     </expand>
     <select />
@@ -146,7 +152,9 @@
       <workItem from="1598172203529" duration="13761000" />
       <workItem from="1598435984466" duration="1951000" />
       <workItem from="1598458825419" duration="1093000" />
-      <workItem from="1598468757146" duration="4894000" />
+      <workItem from="1598468757146" duration="5591000" />
+      <workItem from="1598515320522" duration="6861000" />
+      <workItem from="1598551891104" duration="6193000" />
     </task>
     <servers />
   </component>
@@ -162,22 +170,22 @@
       <screen x="67" y="27" width="1853" height="948" />
     </state>
     <state x="776" y="258" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.948@67.27.1853.948" timestamp="1598097351166" />
-    <state width="1807" height="243" key="GridCell.Tab.0.bottom" timestamp="1598201640261">
+    <state width="1807" height="122" key="GridCell.Tab.0.bottom" timestamp="1598562114481">
       <screen x="67" y="27" width="1853" height="948" />
     </state>
-    <state width="1807" height="243" key="GridCell.Tab.0.bottom/67.27.1853.948@67.27.1853.948" timestamp="1598201640261" />
-    <state width="1807" height="243" key="GridCell.Tab.0.center" timestamp="1598201640260">
+    <state width="1807" height="122" key="GridCell.Tab.0.bottom/67.27.1853.948@67.27.1853.948" timestamp="1598562114481" />
+    <state width="1807" height="122" key="GridCell.Tab.0.center" timestamp="1598562114480">
       <screen x="67" y="27" width="1853" height="948" />
     </state>
-    <state width="1807" height="243" key="GridCell.Tab.0.center/67.27.1853.948@67.27.1853.948" timestamp="1598201640260" />
-    <state width="1807" height="243" key="GridCell.Tab.0.left" timestamp="1598201640260">
+    <state width="1807" height="122" key="GridCell.Tab.0.center/67.27.1853.948@67.27.1853.948" timestamp="1598562114480" />
+    <state width="1807" height="122" key="GridCell.Tab.0.left" timestamp="1598562114480">
       <screen x="67" y="27" width="1853" height="948" />
     </state>
-    <state width="1807" height="243" key="GridCell.Tab.0.left/67.27.1853.948@67.27.1853.948" timestamp="1598201640260" />
-    <state width="1807" height="243" key="GridCell.Tab.0.right" timestamp="1598201640261">
+    <state width="1807" height="122" key="GridCell.Tab.0.left/67.27.1853.948@67.27.1853.948" timestamp="1598562114480" />
+    <state width="1807" height="122" key="GridCell.Tab.0.right" timestamp="1598562114481">
       <screen x="67" y="27" width="1853" height="948" />
     </state>
-    <state width="1807" height="243" key="GridCell.Tab.0.right/67.27.1853.948@67.27.1853.948" timestamp="1598201640261" />
+    <state width="1807" height="122" key="GridCell.Tab.0.right/67.27.1853.948@67.27.1853.948" timestamp="1598562114481" />
     <state x="482" y="135" key="SettingsEditor" timestamp="1597682162764">
       <screen x="67" y="27" width="1853" height="948" />
     </state>
