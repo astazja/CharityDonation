@@ -30,7 +30,8 @@
 {% block content %}
     <section id="login-section" class="login-page">
       <h2>Zaloguj się</h2>
-      <form>
+      <form action="{% url 'url_login' %}" method="POST">{% csrf_token %}
+          {% if error_message %}<div><p>{{ error_message }}</p></div>{% endif %}
         <div class="form-group">
           <input type="email" name="email" placeholder="Email" />
         </div>

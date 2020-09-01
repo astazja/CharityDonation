@@ -1,16 +1,18 @@
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.shortcuts import render
 
 # Create your views here.
 from django.views import View
-from .models import Institution, Donation
+from .models import Institution, Donation, Category
+
 
 class LandingPage(View):
     def get(self, request):
        bags = Donation.objects.all()
        num_institutions = Donation.objects.values('institution_id').distinct().count()
-       institutions_list = Institution.objects.prefetch_related('categories__institution_set').all()
+       institutions_list = Institution.objects.all()
        sum_bag = 0
        for bag in bags:
            sum_bag += bag.quantity
@@ -21,7 +23,7 @@ class LandingPage(View):
        }
        return render(request, 'index.html', context)
 
-    # POPRAWIĆ
+    # POPRAWIĆ html
     def listing(self, request):
         institution_list = Institution.objects.all()
         paginator = Paginator(institution_list, 5)
@@ -29,13 +31,36 @@ class LandingPage(View):
         institutions_pag = paginator.get_page(page)
         return render(request, 'index.html', {'institutions_pag':institutions_pag})
 
+    def logout_page(self, request):
+        logout(request)
+        return render(request, 'index.html')
+
 class AddDonation(View):
     def get(self, request):
-        return render(request, 'form.html')
+        categories = Category.objects.all()
+        institutions = Institution.objects.all()
+        context = {
+            'categories':categories,
+            'institutions': institutions
+        }
+        return render(request, 'form.html', context)
 
 class Login(View):
     def get(self, request):
         return render(request, 'login.html')
+
+    def post(self, request):
+        username = request.POST.get('email')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                return render(request, 'index.html')
+            else:
+                return render(request, 'login.html', {'error_message':'Twoje konto jest zablokowane.'})
+        else:
+            return render(request, 'register.html', {'error_message':'Taki użytkownik nie istnieje. Zarejestruj się.'})
 
 class Register(View):
     def get(self, request):

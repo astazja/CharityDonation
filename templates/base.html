@@ -12,10 +12,23 @@
     <header class="header--main-page">
       <nav class="container container--70">
           {% block log %}
+          {% if user.is_authenticated  %}
+        <ul class="nav--actions">
+          <li class="logged-user">
+            Witaj {{user.first_name}}
+            <ul class="dropdown">
+              <li><a href="#">Profil</a></li>
+              <li><a href="#">Ustawienia</a></li>
+              <li><a href="{% url 'logout' %}">Wyloguj</a></li>
+            </ul>
+          </li>
+        </ul>
+          {% else %}
         <ul class="nav--actions">
           <li><a href="{% url 'url_login' %}#login-section" class="btn btn--small btn--without-border">Zaloguj</a></li>
           <li><a href="{% url 'url_register' %}#register-section" class="btn btn--small btn--highlighted">Załóż konto</a></li>
         </ul>
+          {% endif %}
           {% endblock log %}
 
         <ul>
@@ -23,7 +36,11 @@
           <li><a href="{% url 'url_landing_page' %}#steps" class="btn btn--without-border">O co chodzi?</a></li>
           <li><a href="{% url 'url_landing_page' %}#about-us" class="btn btn--without-border">O nas</a></li>
           <li><a href="{% url 'url_landing_page' %}#help" class="btn btn--without-border">Fundacje i organizacje</a></li>
-          <li><a href="{% url 'url_add_donation' %}" class="btn btn--without-border">Przekaż dary</a></li>
+          {% if user.is_authenticated  %}
+          <li><a href="{% url 'url_add_donation' %}#emit" class="btn btn--without-border">Przekaż dary</a></li>
+          {% else %}
+          <li><a href="{% url 'url_login' %}#login-section" class="btn btn--without-border">Przekaż dary</a></li>
+          {% endif %}
           <li><a href="#contact" class="btn btn--without-border">Kontakt</a></li>
         </ul>
       </nav>
