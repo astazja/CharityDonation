@@ -1,7 +1,31 @@
 document.addEventListener("DOMContentLoaded", function() {
   /**
    * HomePage - Help section
-   */
+   **/
+
+  console.log("pokaż tylko wybrane");
+  function show_category_id() {
+        const categories = document.getElementsByName('categories');
+        var categories_list = [];
+        for(let i = 0; i < categories.length; i++){
+          if(categories[i].checked === true){
+            categories_list.push(categories[i].id)
+          }}
+        console.log(categories_list);
+        return categories_list
+  }
+      console.log(show_category_id());
+
+      console.log("nowe");
+  function get_categories() {
+        ids = show_category_id();
+        var address = "/add/new/";
+        var data = {'category':1};
+        $.get(address, data, function (data, status) {
+          alert(data);
+          $("#institutions").html(data)
+        });
+      }
   class Help {
     constructor($el) {
       this.$el = $el;
@@ -222,6 +246,10 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$step.innerText = this.currentStep;
 
       // TODO: Validation
+      if (this.currentStep == 3)
+      {
+        get_categories();
+      }
 
       this.slides.forEach(slide => {
         slide.classList.remove("active");
@@ -252,4 +280,5 @@ document.addEventListener("DOMContentLoaded", function() {
   if (form !== null) {
     new FormSteps(form);
   }
+
 });

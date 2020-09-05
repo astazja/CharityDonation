@@ -45,6 +45,11 @@ class AddDonation(View):
         }
         return render(request, 'form.html', context)
 
+def get_institution_category(request):
+    category_id = request.GET.getlist('category')
+    istitution = Institution.objects.filter(categories__in = category_id)
+    return render(request, 'institution.html', {'institutions':istitution})
+
 class Login(View):
     def get(self, request):
         return render(request, 'login.html')
