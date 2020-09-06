@@ -15,10 +15,17 @@ class Category(models.Model):
         return self.name
 
 class Institution(models.Model):
-    name = models.CharField(max_length=120)
-    description = models.TextField(blank=True)
-    type = models.CharField(choices=FUNDATIONS, max_length=50, default="fun")
-    categories = models.ManyToManyField(Category)
+    name = models.CharField(max_length=120, verbose_name="Nazwa")
+    description = models.TextField(blank=True, verbose_name="Opis")
+    type = models.CharField(choices=FUNDATIONS, max_length=50, default="fun", verbose_name="Typ")
+    categories = models.ManyToManyField(Category, verbose_name="Kategorie")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Instytucja"
+        verbose_name_plural = "Instytucje"
 
 class Donation(models.Model):
     quantity = models.IntegerField()

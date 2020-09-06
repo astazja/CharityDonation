@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+<body>
+    <header class="header--form-page">
+{% block header %}
+      <div class="slogan container container--90">
+          <h2>
+          {% if user.is_authenticated %}
+
+            <div class="profil_title">Imię: {{ user.first_name }}</div>
+            <div class="profil_title">Nazwisko: {{ user.last_name }}</div>
+            <div class="profil_title">E-mail: {{ user.email }}</div>
+            <div class="profil_title">Informacje o darowiznach:</div>
+                <div class="profil_title">Przekazanych worków: {{ bags }}</div>
+                <div class="profil_title">Wsparte organizacje:
+                {% for donation in donations %}
+                  {% if user.id == donation.user_id %}
+                    <li class="profil_subtitle">  {{ donation.institution }}</li>
+                  {% endif %}
+                {% endfor %}
+                </div>
+                <div class="profil_title">Kategorie przekazanych rzeczy:
+                    {% for donation in donations %}
+                        {% if user.id == donation.user_id %}
+                            <li class="profil_subtitle"> {% for cat in donation.categories.all %} {{ cat }}, {% endfor %}</li>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="profil_title">Kiedy zostały/ będą zabrane:
+                    {% for donation in donations %}
+                        {% if user.id == donation.user_id %}
+                            <li class="profil_subtitle"> {{ donation.pic_up_date }} o godzine {{ donation.pic_up_time }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+          {% endif %}
+          </h2>
+      </div>
+{% endblock header %}
+    </header>

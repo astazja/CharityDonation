@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var categories_list = [];
         for(let i = 0; i < categories.length; i++){
           if(categories[i].checked === true){
-            categories_list.push(categories[i].id)
+            categories_list.push(categories[i].value)
           }}
         console.log(categories_list);
         return categories_list
@@ -20,9 +20,9 @@ document.addEventListener("DOMContentLoaded", function() {
   function get_categories() {
         ids = show_category_id();
         var address = "/add/new/";
-        var data = {'category':1};
+        var data = {'category':ids};
         $.get(address, data, function (data, status) {
-          alert(data);
+          // alert(data);
           $("#institutions").html(data)
         });
       }

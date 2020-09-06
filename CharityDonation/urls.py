@@ -24,5 +24,7 @@ urlpatterns = [
     path('login/', views.Login.as_view(), name="url_login"),
     path('register/', views.Register.as_view(), name="url_register"),
     path('accounts/', include("django.contrib.auth.urls")),
-    path('add/new/', views.get_institution_category)
+    path('add/new/', views.get_institution_category),
+    path('profil/', views.ProfilView.as_view(), name="url_profil"),
+    path('add/confirmation', views.FormConfirmationView.as_view(), name="url_confirmation")
 ]
