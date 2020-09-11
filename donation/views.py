@@ -1,10 +1,15 @@
+import json
+
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.views import View
+
+from .forms import DonationForm
 from .models import Institution, Donation, Category
 
 
@@ -37,48 +42,34 @@ class LandingPage(View):
 
 class AddDonation(View):
     def get(self, request):
-        categories = Category.objects.all()
-        institutions = Institution.objects.all()
-        context = {
-            'categories':categories,
-            'institutions': institutions
-        }
-        return render(request, 'form.html', context)
+        form = DonationForm()
+        if request.user.is_authenticated:
+            categories = dict()
+            for category in Category.objects.all():
+                categories[category.id] = [institution.id for institution in Institution.objects.filter(categories=category.id)]
+            categories_for_js = json.dumps(categories)
+            context = {
+                'form':form,
+                'categories':categories_for_js
+            }
+            return render(request, 'form.html', context)
+
+        return redirect('url_login')
 
     def post(self,request):
-        if request.user.is_authenticated:
-            quantity = request.POST.get('bags')
-            categories = request.POST.get('categories')
-            institution = request.POST.get('organization')
-            address = request.POST.get('address')
-            phone_number =request.POST.get('phone')
-            city = request.POST.get('city')
-            zip_code = request.POST.get('postcode')
-            pic_up_date = request.POST.get('date')
-            pic_up_time = request.POST.get('time')
-            pic_up_comment = request.POST.get('more_info')
-            donation = Donation.objects.create(
-                quantity=quantity,
-                institution_id=institution,
-                address=address,
-                phone_number=phone_number,
-                city=city,
-                zip_code=zip_code,
-                pic_up_date=pic_up_date,
-                pic_up_time=pic_up_time,
-                pic_up_comment=pic_up_comment
-            )
-            donation.save()
-            donation.categories.add(categories)
-        return redirect('/add/confirmation')
-
-def get_institution_category(request):
-    category_id = request.GET.getlist('category')
-    istitution = Institution.objects.filter(categories__in = category_id)
-    return render(request, 'institution.html', {'institutions':istitution})
+        form = DonationForm(request.POST)
+        data = dict()
+        if form.is_valid():
+            donation = form.save()
+            donation.user = request.user
+            form.save()
+            data['form_is_vaild'] = True
+        else:
+            data['form_is_vaild'] = False
+        return JsonResponse(data)
 
 class FormConfirmationView(View):
-    def post(self, request):
+    def get(self, request):
         return render(request, 'form-confirmation.html')
 
 class Login(View):
