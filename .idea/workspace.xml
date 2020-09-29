@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56b01aaa-821e-4d9e-8513-d875c8c32808" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/donation/static/js/form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CharityDonation/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CharityDonation/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CharityDonation/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CharityDonation/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/donation/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/donation/static/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/donation/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/donation/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/form-confirmation.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form-confirmation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/institution.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profil.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profil.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,8 +75,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -102,7 +96,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Pobrane/into_good_hands-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Git Katalog Ksiazka wykladowcy/05.07.2020/KatalogKsiazek" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -170,6 +164,9 @@
       <workItem from="1599468115544" duration="3039000" />
       <workItem from="1599680479456" duration="430000" />
       <workItem from="1599816700096" duration="13936000" />
+      <workItem from="1600592479543" duration="1515000" />
+      <workItem from="1601370523836" duration="4612000" />
+      <workItem from="1601376059559" duration="1796000" />
     </task>
     <servers />
   </component>
@@ -185,33 +182,33 @@
       <screen x="67" y="27" width="1853" height="948" />
     </state>
     <state x="726" y="249" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/67.27.1853.948@67.27.1853.948" timestamp="1599840694328" />
-    <state x="776" y="258" width="424" height="484" key="FileChooserDialogImpl" timestamp="1599835448661">
+    <state x="776" y="258" width="424" height="484" key="FileChooserDialogImpl" timestamp="1601376197725">
       <screen x="67" y="27" width="1853" height="948" />
     </state>
-    <state x="776" y="258" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.948@67.27.1853.948" timestamp="1599835448661" />
-    <state width="1807" height="121" key="GridCell.Tab.0.bottom" timestamp="1599841449544">
+    <state x="776" y="258" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.948@67.27.1853.948" timestamp="1601376197725" />
+    <state width="1807" height="121" key="GridCell.Tab.0.bottom" timestamp="1601384369709">
       <screen x="67" y="27" width="1853" height="948" />
     </state>
-    <state width="1807" height="121" key="GridCell.Tab.0.bottom/67.27.1853.948@67.27.1853.948" timestamp="1599841449544" />
-    <state width="1807" height="121" key="GridCell.Tab.0.center" timestamp="1599841449542">
+    <state width="1807" height="121" key="GridCell.Tab.0.bottom/67.27.1853.948@67.27.1853.948" timestamp="1601384369709" />
+    <state width="1807" height="121" key="GridCell.Tab.0.center" timestamp="1601384369706">
       <screen x="67" y="27" width="1853" height="948" />
     </state>
-    <state width="1807" height="121" key="GridCell.Tab.0.center/67.27.1853.948@67.27.1853.948" timestamp="1599841449542" />
-    <state width="1807" height="121" key="GridCell.Tab.0.left" timestamp="1599841449541">
+    <state width="1807" height="121" key="GridCell.Tab.0.center/67.27.1853.948@67.27.1853.948" timestamp="1601384369706" />
+    <state width="1807" height="121" key="GridCell.Tab.0.left" timestamp="1601384369705">
       <screen x="67" y="27" width="1853" height="948" />
     </state>
-    <state width="1807" height="121" key="GridCell.Tab.0.left/67.27.1853.948@67.27.1853.948" timestamp="1599841449541" />
-    <state width="1807" height="121" key="GridCell.Tab.0.right" timestamp="1599841449543">
+    <state width="1807" height="121" key="GridCell.Tab.0.left/67.27.1853.948@67.27.1853.948" timestamp="1601384369705" />
+    <state width="1807" height="121" key="GridCell.Tab.0.right" timestamp="1601384369708">
       <screen x="67" y="27" width="1853" height="948" />
     </state>
-    <state width="1807" height="121" key="GridCell.Tab.0.right/67.27.1853.948@67.27.1853.948" timestamp="1599841449543" />
+    <state width="1807" height="121" key="GridCell.Tab.0.right/67.27.1853.948@67.27.1853.948" timestamp="1601384369708" />
     <state x="482" y="135" key="SettingsEditor" timestamp="1599835748304">
       <screen x="67" y="27" width="1853" height="948" />
     </state>
     <state x="482" y="135" key="SettingsEditor/67.27.1853.948@67.27.1853.948" timestamp="1599835748304" />
-    <state x="1092" y="328" key="com.intellij.ide.util.TipDialog" timestamp="1599816701822">
+    <state x="1092" y="328" key="com.intellij.ide.util.TipDialog" timestamp="1601376060272">
       <screen x="67" y="27" width="1853" height="948" />
     </state>
-    <state x="1092" y="328" key="com.intellij.ide.util.TipDialog/67.27.1853.948@67.27.1853.948" timestamp="1599816701822" />
+    <state x="1092" y="328" key="com.intellij.ide.util.TipDialog/67.27.1853.948@67.27.1853.948" timestamp="1601376060272" />
   </component>
 </project>

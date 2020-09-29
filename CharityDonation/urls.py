@@ -15,15 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from donation import views
+from donation.views import LandingPage,AddDonation, FormConfirmationView
+from accounts.views import Login, Logout, Register, ProfilView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.LandingPage.as_view(), name="url_landing_page"),
-    path('add/', views.AddDonation.as_view(), name="url_add_donation"),
-    path('login/', views.Login.as_view(), name="url_login"),
-    path('register/', views.Register.as_view(), name="url_register"),
+    path('', LandingPage.as_view(), name="url_landing_page"),
+    path('add/', AddDonation.as_view(), name="url_add_donation"),
+    path('login/', Login.as_view(), name="url_login"),
+    path('logout/', Logout.as_view(), name="url_logout"),
+    path('register/', Register.as_view(), name="url_register"),
     path('accounts/', include("django.contrib.auth.urls")),
-    path('profil/', views.ProfilView.as_view(), name="url_profil"),
-    path('add/confirmation/', views.FormConfirmationView.as_view(), name="url_confirmation")
+    path('profil/', ProfilView.as_view(), name="url_profil"),
+    path('add/confirmation/', FormConfirmationView.as_view(), name="url_confirmation"),
 ]
