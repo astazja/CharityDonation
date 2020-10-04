@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from accounts.models import CustomUser
 
 # Create your models here.
 FUNDATIONS = (
@@ -38,4 +38,4 @@ class Donation(models.Model):
     pic_up_date = models.DateField()
     pic_up_time = models.TimeField()
     pic_up_comment = models.TextField(blank=True)
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, default=None)
+    user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, default=None)

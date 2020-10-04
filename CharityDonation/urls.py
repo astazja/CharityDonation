@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from donation.views import LandingPage,AddDonation, FormConfirmationView
-from accounts.views import Login, Logout, Register, ProfilView
+from accounts.views import Login, Logout, Register, ProfilView, ChangePassword
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +28,5 @@ urlpatterns = [
     path('accounts/', include("django.contrib.auth.urls")),
     path('profil/', ProfilView.as_view(), name="url_profil"),
     path('add/confirmation/', FormConfirmationView.as_view(), name="url_confirmation"),
+    path('profil/change/', ChangePassword.as_view(), name="url_change"),
 ]
