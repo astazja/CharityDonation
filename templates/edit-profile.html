@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+<body>
+{% block content %}
+    <section id="edit-section" class="login-page">
+      <h2>Zmień dane</h2>
+      <form action="{% url 'url_edit' %}" method="POST">{% csrf_token %}
+          <div class="form-group">
+            {{ form.first_name }}
+          </div>
+          <div class="form-group">
+            {{ form.last_name }}
+          </div>
+          <div class="form-group">
+              {{form.email}}
+          </div>
+        {% for field in form %}
+            {% for error in field.errors %}
+                <p style="color: red; font-size: 16px;">{{ error }}</p>
+            {% endfor %}
+        {% endfor%}
+        <div class="form-group form-group--buttons">
+          <a href="{% url 'url_change' %}#change-section" class="btn btn--without-border">Zmień hasło</a>
+          <button class="btn" type="submit">Zmień</button>
+        </div>
+      </form>
+    </section>
+{% endblock content %}
+</body>
+

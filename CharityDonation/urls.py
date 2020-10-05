@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from donation.views import LandingPage,AddDonation, FormConfirmationView
-from accounts.views import Login, Logout, Register, ProfilView, ChangePassword
+from donation.views import LandingPage,AddDonation, FormConfirmationView, ArchiveDonation, SingleDonation
+from accounts.views import Login, Logout, Register, ProfileView, ChangePassword, EditProfile
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,7 +26,10 @@ urlpatterns = [
     path('logout/', Logout.as_view(), name="url_logout"),
     path('register/', Register.as_view(), name="url_register"),
     path('accounts/', include("django.contrib.auth.urls")),
-    path('profil/', ProfilView.as_view(), name="url_profil"),
+    path('profile/', ProfileView.as_view(), name="url_profile"),
     path('add/confirmation/', FormConfirmationView.as_view(), name="url_confirmation"),
-    path('profil/change/', ChangePassword.as_view(), name="url_change"),
+    path('profile/change/', ChangePassword.as_view(), name="url_change"),
+    path('profile/edit/', EditProfile.as_view(), name="url_edit"),
+    path('donations/', ArchiveDonation.as_view(), name="url_donations"),
+    path('donations/<int:donation_id>/', SingleDonation.as_view(), name="url_donations_details "),
 ]

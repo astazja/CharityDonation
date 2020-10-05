@@ -39,3 +39,7 @@ class Donation(models.Model):
     pic_up_time = models.TimeField()
     pic_up_comment = models.TextField(blank=True)
     user = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, default=None)
+    is_taken = models.BooleanField(default=False, verbose_name="Zrealizowane")
+
+    class Meta:
+        ordering = ['is_taken', 'pic_up_date']

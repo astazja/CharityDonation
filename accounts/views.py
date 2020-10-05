@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.views import View
-from accounts.forms import UserAuthenticationForm, UserRegisterForm, ChangePasswordForm
+from accounts.forms import UserAuthenticationForm, UserRegisterForm, ChangePasswordForm, EditProfileForm
 
 from donation.models import Donation
 
@@ -44,7 +44,7 @@ class Register(View):
             return redirect('url_login')
         return render(request, 'register.html', {'form':form})
 
-class ProfilView(View):
+class ProfileView(View):
     def get(self, request):
         sum_bag = 0
         if request.user.is_authenticated:
@@ -55,12 +55,24 @@ class ProfilView(View):
             'donations': donations,
             'bags': sum_bag,
         }
-        return render(request, 'profil.html', context)
+        return render(request, 'profile.html', context)
+
+class EditProfile(View):
+    def get(self, request):
+        form = EditProfileForm(instance=request.user)
+        return render(request, 'edit-profile.html', {'form':form})
+
+    def post(self, request):
+        form = EditProfileForm( request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('url_profile')
+        return render(request, 'edit-profile.html', {'form':form})
 
 class ChangePassword(View):
     def get(self,request):
         form = ChangePasswordForm(request.user)
-        return render(request, 'change-profile.html', {'form':form})
+        return render(request, 'change-password.html', {'form':form})
 
     def post(self, request):
         form = ChangePasswordForm(request.user, request.POST)
@@ -69,4 +81,4 @@ class ChangePassword(View):
             update_session_auth_hash(request, user)
             messages.success(request, 'Udało sie zmienić hasło. Proszę zalogować się ponownie, nowym hasłem.')
             return redirect('url_login')
-        return render(request, 'change-profile.html', {'form':form})
+        return render(request, 'change-password.html', {'form':form})

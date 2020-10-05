@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <section id="donation-section" class="login-page">
+      <h2>Moje dary:</h2>
+        <h3>Dar dla: {{ donation.institution.type }}: {{ donation }}</h3>
+        <ul>
+            <li><h3> Ilość worków: {{ donation.quantity }}</h3></li>
+            <li><h3> Zawierajacych: {% for category in donation.categories.all %}{{ category }},{% endfor %}</h3></li>
+            <li><h3> Planowany odbiór dnia: {{ donation.pic_up_date }}, o godzinie: {{ donation.pic_up_time }}</h3></li>
+            <li><h3> Status:
+                {% if donation.is_taken %}
+                    - odebrane
+                {% else %}
+                    - nieodebrane
+                    <form action="{% url 'url_donations_details' donation.id %}" method="POST">{% csrf_token %}
+                    <div><button type="submit" class="btn btn--small">{% if not donation.is_taken %}Archiwizuj{% else %}Przywróć{% endif %}</button></div>
+                    </form>
+                {% endif %}
+                </h3></li>
+
+        </ul>
+
+
+    </section>
+{% endblock content %}
+

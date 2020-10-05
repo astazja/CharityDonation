@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <section id="donation-section" class="login-page">
+      <h2>Moje dary:</h2>
+        {% if donations %}
+                {% for donation in donations %}
+                    {% if donation.is_taken %}
+                        <div style="color: blue">
+                            <h3> Przekazano do: {{ donation.institution }}, ilość worków: {{ donation.quantity }}, zawierąjcych:
+                                {% for category in donation.categories.all %} {{ category }}, {% endfor %}
+                                <a href="{% url 'url_donations_details ' donation.id %}">Detale</a>
+                                <br>
+                            </h3>
+                        </div>
+                    {% else %}
+                        <div style="color: firebrick">
+                            <h3> Oczekuje na przekazanie do: {{ donation.institution }}, ilość worków: {{ donation.quantity }}, zawierąjcych:
+                                {% for category in donation.categories.all %} {{ category }}, {% endfor %}
+                                <a href="{% url 'url_donations_details ' donation.id %}">Detale</a>
+                                <br>
+                            </h3>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+        {% else %}
+            <div>
+                Nie przekazano żadnych darów.
+            </div>
+        {% endif %}
+    </section>
+{% endblock content %}

@@ -18,8 +18,9 @@
           <li class="logged-user">
             Witaj {{user.first_name}}
             <ul class="dropdown">
-              <li><a href="{% url 'url_profil' %}">Profil</a></li>
-              <li><a href="{% url 'url_change' %}">Ustawienia</a></li>
+              <li><a href="{% url 'url_profile' %}">Profil</a></li>
+              <li><a href="{% url 'url_donations' %}">Moje zbiórki</a></li>
+              <li><a href="{% url 'url_edit' %}#edit-section">Ustawienia</a></li>
               {% if user.is_superuser %}
                     <li><a href="/admin/">Panel administracyjny</a></li>
               {% endif %}

@@ -1,13 +1,12 @@
 import json
 
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.models import User
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator
-from django.http import JsonResponse
-from django.shortcuts import render, redirect
+from django.http import JsonResponse, Http404
+from django.shortcuts import render, redirect, get_object_or_404
 
 # Create your views here.
-from django.views import View
+from django.views import View, generic
 
 from .forms import DonationForm
 from .models import Institution, Donation, Category
@@ -67,3 +66,19 @@ class AddDonation(View):
 class FormConfirmationView(View):
     def get(self, request):
         return render(request, 'form-confirmation.html')
+
+class ArchiveDonation(LoginRequiredMixin, View):
+    def get(self, request, donation_id):
+        raise Http404('Archiwizacja możliwa tylko poprzez przycisk w szczególe widoku darowizny')
+
+    def post(self, request, donation_id):
+        donation = get_object_or_404(Donation, id=donation_id)
+        donation.is_taken = False if donation.is_taken else True
+        donation.save()
+        return redirect('url_donations')
+
+class SingleDonation(LoginRequiredMixin, generic.DetailView):
+    model = Donation
+    context_object_name = 'donation'
+
+
