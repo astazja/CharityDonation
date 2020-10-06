@@ -1,24 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
 
-  <body>
+{% block header %}
     <header class="header--form-page">
-      <nav class="container container--70">
-      </nav>
-    {% block header %}
-
-      <div class="slogan container container--90">
-          <h2>
-            Dziękujemy za przesłanie formularza Na maila prześlemy wszelkie
-            informacje o odbiorze.
-          </h2>
-      </div>
-    {% endblock header %}
+        <nav class="container container--70"></nav>
+        <div class="slogan container container--90">
+            <h2>
+                Dziękujemy za przesłanie formularza Na maila prześlemy wszelkie informacje o odbiorze.
+            </h2>
+        </div>
     </header>
+{% endblock header %}
+
 {% block content %}
-
-
     <script src="{% static "js/app.js" %}"></script>
-  {% endblock content %}
-  </body>
-</html>
+{% endblock content %}
+

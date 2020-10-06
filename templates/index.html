@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 
-  <body>
-
+{% block header %}
     <header class="header--main-page">
-      {% block header %}
+
       <div class="slogan container container--90">
         <div class="slogan--item">
           <h1>
@@ -174,5 +173,5 @@
     </section>
     <script src="{% static "js/app.js" %}"></script>
 {% endblock content %}
-  </body>
+
 

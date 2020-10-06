@@ -1,41 +1,58 @@
 {% extends "base.html" %}
 {% load static %}
 
-<body>
-    <header class="header--form-page">
 {% block header %}
+    <header class="header--form-page">
       <div class="slogan container container--90">
-          <h2>
+          <h3>
           {% if user.is_authenticated %}
-
-            <div class="profil_title">Imię: {{ user.first_name }}</div>
-            <div class="profil_title">Nazwisko: {{ user.last_name }}</div>
-            <div class="profil_title">E-mail: {{ user.email }}</div>
-            <div class="profil_title">Informacje o darowiznach:</div>
-                <div class="profil_title">Przekazanych worków: {{ bags }}</div>
-                <div class="profil_title">Wsparte organizacje:
-                {% for donation in donations %}
-                  {% if user.id == donation.user_id %}
-                    <li class="profil_subtitle">  {{ donation.institution }}</li>
-                  {% endif %}
-                {% endfor %}
-                </div>
-                <div class="profil_title">Kategorie przekazanych rzeczy:
-                    {% for donation in donations %}
-                        {% if user.id == donation.user_id %}
-                            <li class="profil_subtitle"> {% for cat in donation.categories.all %} {{ cat }}, {% endfor %}</li>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="profil_title">Kiedy zostały/ będą zabrane:
-                    {% for donation in donations %}
-                        {% if user.id == donation.user_id %}
-                            <li class="profil_subtitle"> {{ donation.pic_up_date }} o godzine {{ donation.pic_up_time }}</li>
-                        {% endif %}
-                    {% endfor %}
-                </div>
+              <div>
+                <div class="profil_title">Imię: {{ user.first_name }}</div>
+                <div class="profil_title">Nazwisko: {{ user.last_name }}</div>
+                <div class="profil_title">E-mail: {{ user.email }}</div>
+                <div class="profil_title">Łącznie przekazanych worków: {{ bags }}</div>
+              </div>
+              <div>
+                <h3>Szczegóły darowizn:</h3>
+                  <table class="profil--table">
+                      <thead>
+                          <th></th>
+                          <th>Worki</th>
+                          <th>Organizacje</th>
+                          <th>Kategorie</th>
+                          <th>Data odbioru</th>
+                          <th>Godzina odbioru</th>
+                          <th>Uwagi</th>
+                      </thead>
+                      <tbody>
+                      {% for donation in donations %}
+                          <tr class="{% if donation.is_taken %}user--donation-old{% else %}user--donation-active{% endif %}">
+                              <td>{{ forloop.counter }}</td>
+                              <td>{{ donation.quantity }}</td>
+                              <td>{{ donation.institution }}</td>
+                              <td>{{ donation.categories.all|join:', ' }}</td>
+                              <td>{{ donation.pic_up_date }}</td>
+                              <td>{{ donation.pic_up_time }}</td>
+                              <td>{{ donation.pic_up_comment }}</td>
+                              <td>
+                                  <form action="{% url 'url_archive' donation.id %}" method="post">{% csrf_token %}
+                                      <button type="submit" class="btn btn--small btn--without-border">
+                                          {% if donation.is_taken %}Przywróć{% else %}Archiwizuj{% endif %}</button>
+                                  </form>
+                              </td>
+                              <td>
+                                  <a href="{% url 'url_donation' donation.pk %}">
+                                      <button type="submit" class="btn btn--small">Szczegóły</button>
+                                  </a>
+                              </td>
+                          </tr>
+                      {% endfor %}
+                      </tbody>
+                  </table>
+              </div>
           {% endif %}
-          </h2>
+          </h3>
       </div>
-{% endblock header %}
     </header>
+{% endblock header %}
+

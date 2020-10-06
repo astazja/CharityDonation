@@ -1,7 +1,7 @@
 import json
 
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.core.paginator import Paginator
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import JsonResponse, Http404
 from django.shortcuts import render, redirect, get_object_or_404
 
@@ -28,12 +28,17 @@ class LandingPage(View):
        return render(request, 'index.html', context)
 
     # POPRAWIĆ html
-    def listing(self, request):
-        institution_list = Institution.objects.all()
-        paginator = Paginator(institution_list, 5)
-        page = request.GET.get('page')
-        institutions_pag = paginator.get_page(page)
-        return render(request, 'index.html', {'institutions_pag':institutions_pag})
+def listing( request, institution_type, page_number):
+    institution_list = Institution.objects.filter(type=institution_type)
+    paginator = Paginator(institution_list, 5)
+    page = request.GET.get(f"{page_number}",1)
+    try:
+        records = paginator.page(page)
+    except PageNotAnInteger:
+        records = paginator.page(1)
+    except EmptyPage:
+        records = paginator.page(paginator.num_pages)
+    return records
 
 class AddDonation(View):
     def get(self, request):
@@ -75,7 +80,7 @@ class ArchiveDonation(LoginRequiredMixin, View):
         donation = get_object_or_404(Donation, id=donation_id)
         donation.is_taken = False if donation.is_taken else True
         donation.save()
-        return redirect('url_donations')
+        return redirect('url_profile')
 
 class SingleDonation(LoginRequiredMixin, generic.DetailView):
     model = Donation

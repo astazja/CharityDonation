@@ -48,7 +48,8 @@ class ProfileView(View):
     def get(self, request):
         sum_bag = 0
         if request.user.is_authenticated:
-            donations = Donation.objects.filter(user_id = request.user.id)
+            donations = Donation.objects.filter(user_id = request.user.id).order_by('is_taken', 'pic_up_date',
+                                                                                    'pic_up_time', 'quantity')
             for don in donations:
                 sum_bag += don.quantity
         context = {

@@ -30,6 +30,6 @@ urlpatterns = [
     path('add/confirmation/', FormConfirmationView.as_view(), name="url_confirmation"),
     path('profile/change/', ChangePassword.as_view(), name="url_change"),
     path('profile/edit/', EditProfile.as_view(), name="url_edit"),
-    path('donations/', ArchiveDonation.as_view(), name="url_donations"),
-    path('donations/<int:donation_id>/', SingleDonation.as_view(), name="url_donations_details "),
+    path('archive-donations/<int:donation_id>/', ArchiveDonation.as_view(), name="url_archive"),
+    path('donation/<int:pk>/', SingleDonation.as_view(), name="url_donation"),
 ]
