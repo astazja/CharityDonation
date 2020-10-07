@@ -84,33 +84,31 @@
         <p>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.</p>
 
         <ul class="help--slides-items">
-            {% for institution in institutions_list %}
-                {% if institution.type == "fun" %}
-          <li>
-            <div class="col">
-              <div class="title">{{ institution.name }}</div>
-              <div class="subtitle">{{ institution.description }}</div>
-            </div>
+            {% for fundation in foundations %}
+                <li>
+                    <div class="col">
+                      <div class="title">Fundacja - "{{ fundation.name }}"</div>
+                      <div class="subtitle">Cel i misja: {{ fundation.description }}</div>
+                    </div>
 
-            <div class="col"><div class="text">{% for cat in institution.categories.all %}{{ cat }}, {% endfor %} </div></div>
-          </li>
-                {% endif %}
+                    <div class="col"><div class="text">{% for cat in fundation.categories.all %}{{ cat }}, {% endfor %} </div></div>
+                </li>
             {% endfor %}
-
         </ul>
-{#         Pagination#}
-{#      POPRAWIĆ#}
-{#        <ul class="help--slides-pagination">#}
-{#        {% for num in institutions_pag.paginator.page_range %}#}
-{#            {% if institutions_pag.number == num %}#}
-{#          <li><a href="?page={{ num }}" class="btn btn--small btn--without-border active" data-page="1">{{ num }}</a></li>#}
-{#            {% else %}#}
-{#          <li><a href="?page={{ num }}" class="btn btn--small btn--without-border" data-page="2">{{num}}</a></li>#}
-{#            {% endif %}#}
-{#        {% endfor %}#}
-{#          <li><a href="#" class="btn btn--small btn--without-border" data-page="3">3</a></li>#}
-{#        </ul>#}
 
+
+      <!-- Pagination -->
+          {% if foundations.has_other_pages %}
+            <ul class="help--slides-pagination">
+                {% for num in foundations.paginator.page_range %}
+                    {% if foundations.number == num %}
+                        <li class="btn btn--small btn--without-border active"><a>{{ num }}</a></li>
+                    {% else %}
+                        <li class="btn btn--small btn--without-border"><a href="?page1={{ num }}#help">{{num}}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+          {% endif %}
       </div>
 
 
@@ -120,55 +118,61 @@
           W naszej bazie znajdziesz listę zweryfikowanych Organizacji pozarządowych, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
         </p>
         <ul class="help--slides-items">
-            {% for institution in institutions_list %}
-                {% if institution.type == "non_gov_org" %}
-          <li>
-            <div class="col">
-              <div class="title">{{ institution.name }}</div>
-              <div class="subtitle">{{ institution.description }}</div>
-            </div>
+            {% for organization in organizations %}
+                <li>
+                    <div class="col">
+                      <div class="title">Organizacja - "{{ organization.name }}"</div>
+                      <div class="subtitle">Cel i misja: {{ organization.description }}</div>
+                    </div>
 
-            <div class="col"><div class="text">{% for cat in institution.categories.all %} {{ cat }}, {% endfor %} </div></div>
-          </li>
-                 {% endif %}
+                    <div class="col"><div class="text">{% for cat in organization.categories.all %} {{ cat }}, {% endfor %} </div></div>
+                </li>
             {% endfor %}
         </ul>
 
-        <!-- Pagination
-        <ul class="help--slides-pagination">
-          <li><a href="#" class="btn btn--small btn--without-border active" data-page="1">1</a></li>
-          <li><a href="#" class="btn btn--small btn--without-border" data-page="2">2</a></li>
-          <li><a href="#" class="btn btn--small btn--without-border" data-page="3">3</a></li>
-          <li><a href="#" class="btn btn--small btn--without-border" data-page="4">4</a></li>
-          <li><a href="#" class="btn btn--small btn--without-border" data-page="5">5</a></li>
-        </ul>
-        -->
+        <!-- Pagination -->
+          {% if organizations.has_other_pages %}
+            <ul class="help--slides-pagination">
+                {% for num in organizations.paginator.page_range %}
+                    {% if organizations.number == num %}
+                        <li class="btn btn--small btn--without-border active"><a>{{ num }}</a></li>
+                    {% else %}
+                        <li class="btn btn--small btn--without-border"><a href="?page1={{ num }}#help">{{num}}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+          {% endif %}
       </div>
 
       <!-- SLIDE 3 -->
       <div class="help--slides" data-id="3">
         <p>W naszej bazie znajdziesz listę zweryfikowanych Zbiórek lokalnych, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.</p>
         <ul class="help--slides-items">
-            {% for institution in institutions_list %}
-                {% if institution.type == "loc_coll" %}
-          <li>
-            <div class="col">
-              <div class="title">{{institution.name}}</div>
-              <div class="subtitle">{{institution.description}}</div>
-            </div>
+            {% for collection in collections %}
+                <li>
+                    <div class="col">
+                      <div class="title">Nazwa zbiórki: "{{collection.name}}"</div>
+                      <div class="subtitle">Cel i misja: "{{collection.description}}"</div>
+                    </div>
 
-            <div class="col"><div class="text">{% for cat in institution.categories.all %} {{cat}}, {% endfor %}</div></div>
-          </li>
-                {% endif %}
+                    <div class="col"><div class="text">{% for cat in collection.categories.all %} {{cat}}, {% endfor %}</div></div>
+                </li>
             {% endfor %}
         </ul>
 
-        <!-- Pagination
-        <ul class="help--slides-pagination">
-          <li><a href="#" class="btn btn--small btn--without-border active" data-page="1">1</a></li>
-          <li><a href="#" class="btn btn--small btn--without-border" data-page="2">2</a></li>
-        </ul>
-        -->
+        <!-- Pagination -->
+          {% if collections.has_other_pages %}
+            <ul class="help--slides-pagination">
+                {% for num in collections.paginator.page_range %}
+                    {% if collections.number == num %}
+                        <li class="btn btn--small btn--without-border active"><a>{{ num }}</a></li>
+                    {% else %}
+                        <li class="btn btn--small btn--without-border"><a href="?page1={{ num }}#help">{{num}}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+          {% endif %}
+
       </div>
     </section>
     <script src="{% static "js/app.js" %}"></script>

@@ -11,27 +11,10 @@ from django.views import View, generic
 from .forms import DonationForm
 from .models import Institution, Donation, Category
 
-
-class LandingPage(View):
-    def get(self, request):
-       bags = Donation.objects.all()
-       num_institutions = Donation.objects.values('institution_id').distinct().count()
-       institutions_list = Institution.objects.all()
-       sum_bag = 0
-       for bag in bags:
-           sum_bag += bag.quantity
-       context = {
-           'bags': sum_bag,
-           'institutions': num_institutions,
-           'institutions_list':institutions_list
-       }
-       return render(request, 'index.html', context)
-
-    # POPRAWIĆ html
 def listing( request, institution_type, page_number):
     institution_list = Institution.objects.filter(type=institution_type)
-    paginator = Paginator(institution_list, 5)
     page = request.GET.get(f"{page_number}",1)
+    paginator = Paginator(institution_list, 5)
     try:
         records = paginator.page(page)
     except PageNotAnInteger:
@@ -39,6 +22,22 @@ def listing( request, institution_type, page_number):
     except EmptyPage:
         records = paginator.page(paginator.num_pages)
     return records
+
+class LandingPage(View):
+    def get(self, request):
+       bags = Donation.objects.all()
+       num_institutions = Donation.objects.values('institution_id').distinct().count()
+       sum_bag = 0
+       for bag in bags:
+           sum_bag += bag.quantity
+       context = {
+           'bags': sum_bag,
+           'institutions': num_institutions,
+           'foundations': listing(request, 'fun', 'page1'),
+           'organizations': listing(request, 'non_gov_org', 'page2'),
+           'collections': listing(request, 'loc_coll', 'page3')
+       }
+       return render(request, 'index.html', context)
 
 class AddDonation(View):
     def get(self, request):
@@ -85,5 +84,3 @@ class ArchiveDonation(LoginRequiredMixin, View):
 class SingleDonation(LoginRequiredMixin, generic.DetailView):
     model = Donation
     context_object_name = 'donation'
-
-

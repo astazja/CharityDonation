@@ -52,6 +52,7 @@ class ProfileView(View):
                                                                                     'pic_up_time', 'quantity')
             for don in donations:
                 sum_bag += don.quantity
+
         context = {
             'donations': donations,
             'bags': sum_bag,
